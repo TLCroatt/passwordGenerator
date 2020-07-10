@@ -34,6 +34,23 @@ function hasSpecialChar() {
     return special
 }
 
+function generatePassword() {
+    var passwordLength = getLength()
+    var upperChar = hasUpperCase()
+    var lowerChar = hasLowerCase()
+    var num = hasNumeric()
+    var special = hasSpecialChar()
+    if (upperCase) {
+        selectedChar = selectedChar + upperCase
+    }
+    if (lowerCase) {
+        selectedChar = selectedChar + lowerCase
+    }
+    
+    
+    var finalPassword = ""
+  }
+
  
 // Write password to the #password input
 function writePassword() {
