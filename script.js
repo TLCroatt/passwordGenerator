@@ -6,6 +6,13 @@ var numeric = "1234567890"
 var specialChar = "!@#$%^&*?"
 var selectedChar = ""
 
+function getLength() {
+    var confirmLength
+    while(confirmLength <=8 || confirmLength >=128) {
+        confirmLength = prompt("Password length must be between 8 - 128 characters. How long would you like your password to be?");
+    }
+    return confirmLength;
+}
 
 // Write password to the #password input
 function writePassword() {
