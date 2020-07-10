@@ -46,7 +46,12 @@ function generatePassword() {
     if (lowerCase) {
         selectedChar = selectedChar + lowerCase
     }
-    
+    if (numeric) {
+        selectedChar = selectedChar + numeric
+    }
+    if (specialChar) {
+        selectedChar = selectedChar + specialChar
+    }
     
     var finalPassword = ""
   }
