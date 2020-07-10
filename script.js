@@ -29,6 +29,11 @@ function hasNumeric() {
     return num
 }
 
+function hasSpecialChar() {
+    var special = confirm("Do you want to use special characters?");
+    return special
+}
+
  
 // Write password to the #password input
 function writePassword() {
