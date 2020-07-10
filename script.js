@@ -24,6 +24,11 @@ function hasLowerCase() {
     return lowerCase
 }
 
+function hasNumeric() {
+    var num = confirm("Do you want to use numbers?");
+    return num
+}
+
  
 // Write password to the #password input
 function writePassword() {
