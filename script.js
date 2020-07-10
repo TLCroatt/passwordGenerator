@@ -14,6 +14,11 @@ function getLength() {
     return confirmLength;
 }
 
+function hasUpperCase() {
+    var upperCase = confirm("Do you want to use upper case letters?");
+    return upperCase
+ }
+ 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
