@@ -5,14 +5,15 @@ var lowerCase = "abcdefghijklmnopqrstuvwxyz"
 var numeric = "1234567890"
 var specialChar = "!@#$%^&*?"
 var selectedChar = ""
+var length = prompt("Password length must be between 8 - 128 characters. How long would you like your password to be?")
 
-function getLength() {
-    var confirmLength
-    while(confirmLength <=8 || confirmLength >=128) {
-        confirmLength = prompt("Password length must be between 8 - 128 characters. How long would you like your password to be?");
+
+    while(length <=8 || length >=128) {
+        length = prompt("Password length must be between 8 - 128 characters. How long would you like your password to be?");
+        console.log("length", length);
     }
-    return confirmLength;
-}
+
+
 
 function hasUpperCase() {
     var upperCase = confirm("Do you want to use upper case letters?");
@@ -35,7 +36,6 @@ function hasSpecialChar() {
 }
 
 function generatePassword() {
-    var passwordLength = getLength()
     var upperChar = hasUpperCase()
     var lowerChar = hasLowerCase()
     var num = hasNumeric()
@@ -52,8 +52,10 @@ function generatePassword() {
     if (specialChar) {
         selectedChar = selectedChar + specialChar
     }
+   for (var i = 0; i < length; i ++) {
+       Math.floor(Math.random() * length);
+   } 
     
-    var finalPassword = ""
   }
 
  
