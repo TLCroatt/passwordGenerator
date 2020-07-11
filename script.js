@@ -1,17 +1,17 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXZ"
-var lowerCase = "abcdefghijklmnopqrstuvwxyz"
-var numeric = "1234567890"
-var specialChar = "!@#$%^&*?"
-var selectedChar = ""
+var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXZ'
+var lowerCase = 'abcdefghijklmnopqrstuvwxyz'
+var numeric = '1234567890'
+var specialChar = '!@#$%^&*?'
+var selectedChar = ''
 var length = prompt("Password length must be between 8 - 128 characters. How long would you like your password to be?")
 
 
-    while(length <=8 || length >=128) {
-        length = prompt("Password length must be between 8 - 128 characters. How long would you like your password to be?");
-        console.log("length", length);
-    }
+while(length <=8 || length >=128) {
+    length = prompt("Password length must be between 8 - 128 characters. How long would you like your password to be?");
+    console.log("length", length);
+}
 
 
 
@@ -34,12 +34,13 @@ function hasSpecialChar() {
     var special = confirm("Do you want to use special characters?");
     return special
 }
+var password = ''
 
 function generatePassword() {
     var upperChar = hasUpperCase()
     var lowerChar = hasLowerCase()
     var num = hasNumeric()
-    var special = hasSpecialChar()
+    var specialChar = hasSpecialChar()
     if (upperCase) {
         selectedChar = selectedChar + upperCase
     }
@@ -50,10 +51,11 @@ function generatePassword() {
         selectedChar = selectedChar + numeric
     }
     if (specialChar) {
-        selectedChar = selectedChar + specialChar
+        selectedChar = selectedChar + special
     }
    for (var i = 0; i < length; i ++) {
-       Math.floor(Math.random() * length);
+       password = password + selectedChar[Math.floor(Math.random() * length)];
+       document.querySelector("#password").innerHTML = password;
    } 
     
   }
