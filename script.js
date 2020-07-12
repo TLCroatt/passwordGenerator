@@ -58,7 +58,7 @@ function generatePassword() {
        password = password + selectedChar[Math.floor(Math.random() * length)];
        document.querySelector("#password").innerHTML = password;
    } return password;
-    
+
   }
 
  
