@@ -17,23 +17,24 @@ while(length <=8 || length >=128) {
 
 function hasUpperCase() {
     var upperCase = confirm("Do you want to use upper case letters?");
-    return upperCase
+    console.log("upperCase", upperCase);
 }
 
 function hasLowerCase() {
     var lowerCase = confirm("Do you want to use lower case letters?");
-    return lowerCase
+    console.log("lowerCase", lowerCase);
 }
 
 function hasNumeric() {
     var num = confirm("Do you want to use numbers?");
-    return num
+    console.log("num", num);
 }
 
 function hasSpecialChar() {
-    var special = confirm("Do you want to use special characters?");
-    return special
+    var specialChar = confirm("Do you want to use special characters?");
+    console.log("specialChar", specialChar);
 }
+
 var password = ''
 
 function generatePassword() {
@@ -51,12 +52,12 @@ function generatePassword() {
         selectedChar = selectedChar + numeric
     }
     if (specialChar) {
-        selectedChar = selectedChar + special
+        selectedChar = selectedChar + specialChar
     }
    for (var i = 0; i < length; i ++) {
        password = password + selectedChar[Math.floor(Math.random() * length)];
        document.querySelector("#password").innerHTML = password;
-   } 
+   } return password;
     
   }
 
@@ -73,7 +74,7 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 //create 4 character type strings (vars) - special chars, numeric, lower case, upper case
-//create a function to get all user input - length, inclusion of characters: upper, lower, numeric, special; validate - if user gives garbage input, stop function
+//create a function to get all user input - length, inclusion of characters: upper, lower, numeric, special
 //combine all strings for selected characters into one - store in a var
 //pick from the super string as many times randomly for as long as the password is (n times) - store in a var
 //write the string to html (line 16 - already done)
