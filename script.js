@@ -18,21 +18,25 @@ while(length <=8 || length >=128) {
 function hasUpperCase() {
     var upperCase = confirm("Do you want to use upper case letters?");
     console.log("upperCase", upperCase);
+    return upperCase;
 }
 
 function hasLowerCase() {
     var lowerCase = confirm("Do you want to use lower case letters?");
     console.log("lowerCase", lowerCase);
+    return lowerCase;
 }
 
 function hasNumeric() {
     var num = confirm("Do you want to use numbers?");
     console.log("num", num);
+    return num;
 }
 
 function hasSpecialChar() {
     var specialChar = confirm("Do you want to use special characters?");
     console.log("specialChar", specialChar);
+    return specialChar;
 }
 
 var password = ''
@@ -41,21 +45,30 @@ function generatePassword() {
     var upperChar = hasUpperCase()
     var lowerChar = hasLowerCase()
     var num = hasNumeric()
-    var specialChar = hasSpecialChar()
-    if (upperCase) {
+    var specialCharInput = hasSpecialChar()
+
+    password = ''
+    if (upperChar) {
         selectedChar = selectedChar + upperCase
+        password = password + upperCase[Math.floor(Math.random() * upperCase.length)];
     }
-    if (lowerCase) {
+    if (lowerChar) {
         selectedChar = selectedChar + lowerCase
+        password = password + lowerCase[Math.floor(Math.random() * lowerCase.length)];
     }
-    if (numeric) {
+    if (num) {
         selectedChar = selectedChar + numeric
+        password = password + numeric[Math.floor(Math.random() * numeric.length)];
     }
-    if (specialChar) {
+
+    if (specialCharInput) {
         selectedChar = selectedChar + specialChar
+        password = password + specialChar[Math.floor(Math.random() * specialChar.length)];
     }
-   for (var i = 0; i < length; i ++) {
-       password = password + selectedChar[Math.floor(Math.random() * length)];
+   console.log("selectedChar", selectedChar);
+
+   for (var i = password.length; i < length; i ++) {
+       password = password + selectedChar[Math.floor(Math.random() * selectedChar.length)];
        document.querySelector("#password").innerHTML = password;
    } return password;
 
